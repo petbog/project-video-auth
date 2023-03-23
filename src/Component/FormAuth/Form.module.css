@@ -47,8 +47,23 @@
     border: none;
     cursor: pointer;
 }
+.Form_button:hover{
+    transition: 0.5s;
+    background-color: #0b6cac;
+}
 .Button_container{
     display: flex;
     justify-content: center;
     margin: 40px 0 0 0;
+}
+.Form_container{
+    position: relative;
+}
+.form_img{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 48px;
+    top: 65px;
+    cursor: pointer;
 }

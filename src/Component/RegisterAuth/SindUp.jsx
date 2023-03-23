@@ -12,7 +12,6 @@ const SindUp = () => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
-                console.log(user)
                 dispatch(setUser({
                     email: user.email,
                     id: user.uid,
@@ -25,7 +24,7 @@ const SindUp = () => {
 
     return (
         <div className="">
-            <Form title='Register' handleClick={handleRegister} />
+            <Form title='Регистрация' handleClick={handleRegister} />
         </div>
     )
 }

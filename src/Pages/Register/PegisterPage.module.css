@@ -1,0 +1,39 @@
+.login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.login_container{
+    border-radius: 15px;
+    width: 510px;
+    height: 520px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.login_title{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color:#000000 ;
+    margin: 49px 0 23px 0;
+}
+.register_text{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color:#000000 ;
+}
+.register_link{
+    text-decoration: none;
+    padding: 10px 15px;
+    background-color: #1390E5;
+    border-radius: 14px;
+    color: white;
+    margin: 0 0 0 15px;
+}
+.register_link:hover{
+    transition: 0.5s;
+    background-color: #0b6cac;
+}

@@ -5,8 +5,6 @@ const initialState = {
     token: null,
     id: null,
 }
-
-
 const UserSlise = createSlice({
     name: 'user',
     initialState,
