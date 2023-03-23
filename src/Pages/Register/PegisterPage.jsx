@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import SindUp from './../Component/SindUp';
+import SindUp from '../../Component/RegisterAuth/SindUp';
 
 
 const PegisterPage = () => {

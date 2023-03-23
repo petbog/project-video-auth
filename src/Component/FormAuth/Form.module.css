@@ -1,0 +1,54 @@
+.Form_inner{
+    width: 400px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+.form_title{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #9c9c9e;
+}
+.Form_email{
+    width: 334px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #1390E5;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #272727;
+    padding: 0 0 0 10px;
+    background-color:#fff;
+    cursor: pointer;
+}
+
+.Form_pass{
+    width: 334px;
+    height: 48px;
+    border-radius: 10px;
+    border: 1px solid #1390E5;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #272727;
+    padding: 0 0 0 10px;
+    cursor: pointer;
+}
+.Form_button{
+    width: 176px;
+    height: 52px;
+    border-radius: 10px;
+    color: #fff;
+    background-color: #1390E5;
+    border: none;
+    cursor: pointer;
+}
+.Button_container{
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 0 0;
+}

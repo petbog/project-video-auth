@@ -1,8 +1,8 @@
 import { useDispatch } from "react-redux";
-import Form from './Form';
+import Form from '../FormAuth/Form';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
-import { setUser } from "../Redux/slise/UserSlice";
+import { setUser } from "../../Redux/slise/UserSlice";
 
 const Login = () => {
     const dispatch = useDispatch()
@@ -24,7 +24,7 @@ const Login = () => {
     }
     return (
         <div className="">
-             <Form title = 'Login'  handleClick ={handleLogin}/>
+             <Form title = 'Войти'  handleClick ={handleLogin}/>
         </div>
     )
 }

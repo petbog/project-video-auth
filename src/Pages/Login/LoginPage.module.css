@@ -1,0 +1,31 @@
+.login{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.login_container{
+    border-radius: 15px;
+    width: 510px;
+    height: 520px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.login_title{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color:#000000 ;
+    margin: 49px 0 23px 0;
+}
+.login_link{
+    text-decoration: none;
+    color: #000000;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}
+.login_link:hover{
+    font-weight: 500;
+    transition: all 0.3s;
+}
