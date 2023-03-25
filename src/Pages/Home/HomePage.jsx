@@ -4,6 +4,7 @@ import { removeUser } from '../../Redux/slise/UserSlice'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import classes from './HomePage.module.css'
+import SerchVideo from '../../Component/search/SerchVideo';
 
 
 
@@ -17,13 +18,20 @@ const HomePage = () => {
         if (!isAuth) {
             navigate('/Login')
         }
-    }, [isAuth,navigate])
+    }, [isAuth, navigate])
     return isAuth ? (
         <div className={classes.home}>
+            <div className={classes.background_header}></div>
             <div className={classes.home_header}>
                 <div className={classes.home_header_container}>
-                    <p className={classes.home_user}>welcome{email}</p>
+                    <p className={classes.home_user}>welcome {email}</p>
                     <button onClick={() => { dispatch(removeUser()) }} className={classes.home_exid}>Выйти</button>
+                </div>
+            </div>
+            <div className={classes.container}>
+                <div className={classes.wraper_serch}>
+                    <p className={classes.serach_title}>Поиск видео</p>
+                    <SerchVideo />
                 </div>
             </div>
         </div>

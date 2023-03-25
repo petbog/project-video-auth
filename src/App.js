@@ -8,9 +8,11 @@ import PegisterPage from './Pages/Register/PegisterPage';
 function App() {
   return (
     <div className="App">
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+      </Routes>
       <div className="container">
         <Routes>
-          <Route path='/' element={<HomePage />} />
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/Register' element={<PegisterPage />} />
         </Routes>
