@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Modal from './Component/popup/Modal';
 import LoginPage from './Pages/Login/LoginPage';
 import PegisterPage from './Pages/Register/PegisterPage';
 import SearchPage from './Pages/search/SearchPage';
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path='/Login' element={<LoginPage />} />
           <Route path='/Register' element={<PegisterPage />} />
+          <Route path='/Modal' element={<Modal />} />
         </Routes>
       </div>
     </div>

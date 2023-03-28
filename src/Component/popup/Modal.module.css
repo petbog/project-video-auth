@@ -1,0 +1,95 @@
+.modal_container {
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    margin: 50px auto;
+}
+
+.modal_items {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    padding: 0 28px;
+}
+
+.modal_title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #272727;
+    margin: 26px 0px 4px 0;
+}
+
+.modal_input {
+    width: 430px;
+    height: 48px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #090909;
+    padding: 0 0 0 10px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: 1px solid #9d9696;
+}
+
+.slider_container {
+    display: flex;
+    justify-content: space-around;
+    margin: 43px 0 0 0;
+}
+
+.slider_value {
+    width: 70px;
+    height: 24px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #272727;
+    padding: 5px 15px;
+    border: 1px solid #9d9696;
+    border-radius: 10px;
+}
+
+.slider_input {
+    width: 263px;
+    height: 75px;
+}
+
+.slider_text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #272727;
+    margin: 0 0 -19px -56px;
+}
+.button_container{
+    display: flex;
+    justify-content: space-around;
+}
+.button_dontsave {
+    width: 170px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: #fff;
+    border: 1px solid  #1390E5;
+    color: #1390E5;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+}
+.button_save{
+    width: 170px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    background-color: #1390E5;
+    border: 1px solid  #1390E5;
+    color: #fff;
+    border-radius: 10px;
+    padding: 14px 20px;
+    cursor: pointer;
+}
