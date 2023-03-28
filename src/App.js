@@ -1,15 +1,15 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import HomePage from './Pages/Home/HomePage';
 import LoginPage from './Pages/Login/LoginPage';
 import PegisterPage from './Pages/Register/PegisterPage';
+import SearchPage from './Pages/search/SearchPage';
 
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<SearchPage />} />
       </Routes>
       <div className="container">
         <Routes>

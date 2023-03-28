@@ -2,7 +2,7 @@
     height: 100vh;
 }
 .background_header{
-    height: 120px;
+    height: 111px;
     width: 101%;
     background-color: #fff;
     position: absolute;
@@ -47,4 +47,10 @@
     box-sizing: border-box;
     margin: 0 auto;
   }
-  
+.serach_title{
+    color: black;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 52px;
+    margin: 136px 0 97px 0;
+}
