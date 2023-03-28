@@ -1,20 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const api_key=`AIzaSyCGiFK20c7bVUk9E18qBdY5FIZ3YSR43b4`
+const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
 
-export const SearchVideo=createAsyncThunk(
+export const SearchVideo = createAsyncThunk(
     'search/SearchVideo',
-    async function(){
-        const {data} = await axios.get(`https://www.googleapis.com/youtube/v3?key=${api_key}&part=snippet,id&order=date&maxResults=10 `)
-
+    async function () {
+        const data = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=rating&maxResults=10 `)
         return data
     }
 )
 
-
 const initialState = {
-    items: [],
+    item: [],
+    status: 'loading'
 }
 
 const SearchSlise = createSlice({
@@ -22,7 +21,22 @@ const SearchSlise = createSlice({
     initialState,
     reducers: {
         getSearch(state, action) {
-            state.items = action.payload
+            state.item = action.payload
+        },
+    },
+    extraReducers: {
+        [SearchVideo.pending]: (state, action) => {
+            state.status = 'loading'
+            state.item = []
+        },
+        [SearchVideo.fulfilled]: (state, action) => {
+            state.status = 'success'
+            state.item = action.payload
+
+        },
+        [SearchVideo.rejected]: (state, action) => {
+            state.status = 'error'
+            state.item = []
         },
     }
 })

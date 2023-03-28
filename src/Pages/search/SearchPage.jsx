@@ -1,34 +1,35 @@
 import { useAuth } from '../../hooks/use-auth'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { removeUser } from '../../Redux/slise/UserSlice'
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import classes from './SearchPage.module.css'
 import SerchVideo from '../../Component/search/SerchVideo';
-import axios from 'axios';
+import { SearchVideo } from '../../Redux/slise/SearchSlise';
 
 
 
 const SearchPage = () => {
-
+    const { item, status } = useSelector(state => state.search)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { isAuth, email } = useAuth()
-    const [video, setVideo] = useState([])
+    const { items} = item
+    console.log(items)
 
     useEffect(() => {
-        const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
-        axios.get(`https://www.googleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=rating&maxResults=10 `).then((res) => {
-            setVideo(res.data.items)
-        })
-    }, [])
+        dispatch(SearchVideo())
+    }, [dispatch])
+
     useEffect(() => {
         if (!isAuth) {
             navigate('/Login')
         }
     }, [isAuth, navigate])
 
-
+    // const Video = videoItems.map((item, i) => <div key={i}>
+    //     <iframe className={classes.video_inner} src={`https://www.youtube.com/embed/${item.id.videoId}`} title="video player" allowfullscreen></iframe>
+    // </div>)
 
     return isAuth ? (
         <div className={classes.home}>
@@ -43,11 +44,13 @@ const SearchPage = () => {
                 <div className={classes.wraper_serch}>
                     <p className={classes.serach_title}>Поиск видео</p>
                     <SerchVideo />
-                    {
-                        video.map((item,i) =><div key={i}>  
-                          <iframe width='500px' height='300px'  src={`https://www.youtube.com/embed/${item.id.videoId}`} title="video player" allowfullscreen></iframe>
-                        </div>)
-                    }
+                    <div className={classes.video_container}>
+                        {/* {
+                            status === 'error' ? (<div>ошибка</div>)
+                                : (status === 'loading' ? 'Loading' : Video)
+                        } */}
+                    </div>
+
                 </div>
 
             </div>
