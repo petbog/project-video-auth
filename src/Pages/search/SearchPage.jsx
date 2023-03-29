@@ -10,26 +10,26 @@ import { SearchVideo } from '../../Redux/slise/SearchSlise';
 
 
 const SearchPage = () => {
-    const { item, status } = useSelector(state => state.search)
+
+
+    const { item,status } = useSelector(state => state.search)
+    const video = item.items
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const { isAuth, email } = useAuth()
-    const { items} = item
-    console.log(items)
 
     useEffect(() => {
         dispatch(SearchVideo())
     }, [dispatch])
-
     useEffect(() => {
         if (!isAuth) {
             navigate('/Login')
         }
     }, [isAuth, navigate])
 
-    // const Video = videoItems.map((item, i) => <div key={i}>
-    //     <iframe className={classes.video_inner} src={`https://www.youtube.com/embed/${item.id.videoId}`} title="video player" allowfullscreen></iframe>
-    // </div>)
+    const Video = video.map((item, i) => <div key={i}>
+        <iframe className={classes.video_inner} src={`https://www.youtube.com/embed/${item.id.videoId}`} title="video player" ></iframe>
+    </div>)
 
     return isAuth ? (
         <div className={classes.home}>
@@ -45,10 +45,10 @@ const SearchPage = () => {
                     <p className={classes.serach_title}>Поиск видео</p>
                     <SerchVideo />
                     <div className={classes.video_container}>
-                        {/* {
+                        {
                             status === 'error' ? (<div>ошибка</div>)
                                 : (status === 'loading' ? 'Loading' : Video)
-                        } */}
+                        }
                     </div>
 
                 </div>

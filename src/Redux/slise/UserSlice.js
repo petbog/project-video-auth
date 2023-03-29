@@ -7,6 +7,12 @@ const initialState = {
     token: null || UserLC.token,
     id: null || UserLC.id,
 }
+
+// const initialState = {
+//     email: null ,
+//     token: null ,
+//     id: null ,
+// }
 const UserSlise = createSlice({
     name: 'user',
     initialState,

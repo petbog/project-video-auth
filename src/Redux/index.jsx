@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReduser from './slise/UserSlice'
-import SearchReduser from './slise/SearchSlise'
+import user from './slise/UserSlice'
+import search from './slise/SearchSlise'
 
 export const store = configureStore({
     reducer: {
-        user: userReduser,
-        search: SearchReduser,
+        user,
+        search,
     }
 })
