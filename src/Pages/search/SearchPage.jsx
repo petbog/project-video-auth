@@ -2,7 +2,7 @@ import { useAuth } from '../../hooks/use-auth'
 import { useDispatch, useSelector } from 'react-redux';
 import { removeUser } from '../../Redux/slise/UserSlice'
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import classes from './SearchPage.module.css'
 import SerchVideo from '../../Component/search/SerchVideo';
 import { SearchVideo } from '../../Redux/slise/SearchSlise';
@@ -17,15 +17,24 @@ import MyPreloader from '../../preloader/Preloader'
 
 const SearchPage = () => {
     const dispatch = useDispatch()
-
-
-
     const { item, searchValue } = useSelector(state => state.search)
     const video = item.items
     const searchVideos = searchValue
     console.log(searchVideos)
     const navigate = useNavigate()
     const { isAuth, email } = useAuth()
+    const [statusGrid,setStatusGrid]=useState(grid)
+    const [statusList,setStatusList]=useState(list)
+
+    const handleStatusVideoList=()=>{
+        if(statusGrid === grid){
+            setStatusList(grid)
+            setStatusGrid(list)
+        }else{
+            setStatusList(list)
+            setStatusGrid(grid)
+        }
+    }
 
     useEffect(() => {
         dispatch(SearchVideo({
@@ -58,14 +67,14 @@ const SearchPage = () => {
                     <div className={classes.titleSearch}>
                         <TitleSearch />
                         <div className={classes.img_sort}>
-                            <img className={`${classes.img_sort_list}`} src={list} alt="" />
-                            <img src={grid} alt="" />
+                            <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusGrid} alt="" />
+                            <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusList} alt="" />
                         </div>
                     </div>
-                    <div className={classes.video_container}>
+                    <div className={`${statusGrid === grid ? classes.grid : classes.flex}`}>
                         {
                             video ?  video.map((item, index) =>
-                                <Video item={item} key={index} />
+                                <Video item={item} key={index}  />
                             ):skeleton
                         }
                     </div>

@@ -60,11 +60,25 @@
     margin: 47px 0 28px 0;
 }
 
-.video_container {
+
+
+.grid {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    flex-direction:row
 }
+
+.flex {
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
 
 .video_inner {
     width: 300px;
