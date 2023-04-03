@@ -1,0 +1,23 @@
+.video {
+    width: 240px;
+    height: 138px;
+    border-radius: 10px;
+    margin: 0 16px 8px 0;
+}
+
+.video_title {
+    width: 245px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    margin: 0 0 8px 0;
+}
+.video_title_plaulist{
+    width: 245px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color:  rgba(23, 23, 25, 0.3);
+    margin: 0 0 28px 0;
+}

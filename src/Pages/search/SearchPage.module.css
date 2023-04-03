@@ -1,12 +1,14 @@
 .home {
     height: 100vh;
 }
-.background_header{
+
+.background_header {
     height: 111px;
     width: 101%;
     background-color: #fff;
     position: absolute;
 }
+
 .home_header {
     width: 100%;
     height: 106px;
@@ -31,39 +33,56 @@
     cursor: pointer;
     z-index: 1;
 }
-.home_exid{
+
+.home_exid {
     padding: 0px 20px;
     margin: 39px 0 0 40px;
     border: none;
-    color:  white;
+    color: white;
     background-color: cornflowerblue;
     border-radius: 9px 32px 6px 25px;
     cursor: pointer;
-    z-index: 1;    
+    z-index: 1;
 }
-.container{
+
+.container {
     max-width: 1070px;
     padding: 0 15px;
     box-sizing: border-box;
     margin: 0 auto;
-  }
-.serach_title{
+}
+
+.serach_title {
     color: black;
     font-size: 36px;
     font-weight: 400;
     line-height: 52px;
-    margin: 136px 0 97px 0;
+    margin: 47px 0 28px 0;
 }
 
-.video_container{
+.video_container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.video_inner{
+.video_inner {
     width: 300px;
     height: 200px;
     margin: 30px 0;
     border-radius: 10px;
+}
+
+.titleSearch {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img_sort img {
+    cursor: pointer;
+}
+
+.img_sort_list {
+    margin-right: 15px;
 }

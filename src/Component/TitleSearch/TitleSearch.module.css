@@ -1,0 +1,18 @@
+.title_search {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #272727;
+}
+
+.title_search_inner {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: #272727;
+    margin-left:10px;
+}
+.title_container{
+    display: flex;
+    align-items: center;
+}

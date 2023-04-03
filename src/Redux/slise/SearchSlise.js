@@ -5,15 +5,17 @@ const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
 
 export const SearchVideo = createAsyncThunk(
     'search/SearchVideo',
-    async function () {
-        const {data} = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=rating&maxResults=10 `)
-            return data
+    async function (params) {
+        const { searchValue } = params
+        const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=rating&maxResults=10&q=${searchValue}`)
+        return data
     }
 )
 
 const initialState = {
     item: [],
-    status: 'loading' || 'success' || 'error'
+    status: 'loading' || 'success' || 'error',
+    searchValue: '',
 }
 
 const SearchSlise = createSlice({
@@ -23,6 +25,9 @@ const SearchSlise = createSlice({
         getSearch(state, action) {
             state.item = action.payload
         },
+        getSearchValue(state, action) {
+            state.searchValue = action.payload
+        }
     },
     extraReducers: {
         [SearchVideo.pending]: (state, action) => {
@@ -38,6 +43,6 @@ const SearchSlise = createSlice({
         },
     }
 })
-export const { getSearch } = SearchSlise.actions
+export const { getSearch, getSearchValue } = SearchSlise.actions
 export default SearchSlise.reducer
 
