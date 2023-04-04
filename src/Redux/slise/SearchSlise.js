@@ -15,7 +15,7 @@ export const SearchVideo = createAsyncThunk(
 const initialState = {
     item: [],
     status: 'loading' || 'success' || 'error',
-    searchValue: '',
+    searchValue: 'Котики',
 }
 
 const SearchSlise = createSlice({

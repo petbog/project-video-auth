@@ -1,13 +1,13 @@
 .search_input {
-    width: 686px;
+    width: 647px;
     height: 52px;
-    border-radius:10px 0 0 10px;
+    border-radius: 10px 0 0 10px;
     border: 2px solid #c1bdbd;
     font-weight: 400;
     color: black;
     font-size: 20px;
     line-height: 20px;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 46px;
     cursor: pointer;
 }
 
@@ -27,4 +27,21 @@
 
 .search_button:hover{
     background-color: #056cb1;
+}
+.search{
+    position: relative;
+}
+.icons_search{
+    position: absolute;
+    top: 11px;
+    left: 102px;
+    width: 35px;
+}
+.close{
+    position: absolute;
+    top: 13px;
+    right: 258px;
+    width: 23px;
+    height: 30px;
+    cursor: pointer;
 }

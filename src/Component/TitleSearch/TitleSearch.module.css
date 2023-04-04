@@ -11,8 +11,13 @@
     line-height: 24px;
     color: #272727;
     margin-left:10px;
+    
 }
 .title_container{
     display: flex;
     align-items: center;
+}
+.title_search_inner{
+    width: 378px;
+    display: flex;
 }

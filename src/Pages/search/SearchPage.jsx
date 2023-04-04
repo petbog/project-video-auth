@@ -13,6 +13,7 @@ import grid_desibel from '../../img/grid_desibel.png'
 import list_activ from '../../img/list_activ.png'
 import list_desibel from '../../img/list_desibel.png'
 import MyPreloader from '../../preloader/Preloader'
+import simons from '../../img/92513305_simons_cat_013450x450svg.png'
 
 
 
@@ -58,6 +59,7 @@ const SearchPage = () => {
         <div className={classes.home}>
             <div className={classes.background_header}></div>
             <div className={classes.home_header}>
+                <img className={classes.simon} src={simons} alt="" />
                 <div className={classes.home_header_container}>
                     <p className={classes.home_user}>welcome {email}</p>
                     <button onClick={() => { dispatch(removeUser()) }} className={classes.home_exid}>Выйти</button>
