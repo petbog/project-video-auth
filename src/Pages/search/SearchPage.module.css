@@ -4,9 +4,10 @@
 
 .background_header {
     height: 111px;
-    width: 101%;
+    width: 102%;
     background-color: #fff;
     position: absolute;
+    box-shadow: -2px 9px 8px -1px rgba(7, 129, 223, 0.37);
 }
 
 .home_header {
@@ -16,6 +17,7 @@
     justify-content: flex-end;
     max-width: 1100px;
     margin: 0 auto;
+
 }
 
 .home_header_container {
@@ -26,8 +28,9 @@
 
 .home_user {
     padding: 10px 25px;
-    color: white;
-    background-color: cornflowerblue;
+    color: cornflowerblue;
+    background-color: #fff;
+    border: 1px solid cornflowerblue;
     margin: 39px 0 0 0;
     border-radius: 28px 12px 25px 5px;
     cursor: pointer;
@@ -37,9 +40,9 @@
 .home_exid {
     padding: 0px 20px;
     margin: 39px 0 0 40px;
-    border: none;
-    color: white;
-    background-color: cornflowerblue;
+    color: cornflowerblue;
+    background-color: #fff;
+    border: 1px solid cornflowerblue;
     border-radius: 9px 32px 6px 25px;
     cursor: pointer;
     z-index: 1;
@@ -71,7 +74,7 @@
 
 .flex {
     display: flex;
-    width: 500px;
+    width: 100%;
     justify-content: center;
     flex-direction: column;
     align-items: center;

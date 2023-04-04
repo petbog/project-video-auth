@@ -21,3 +21,30 @@
     color:  rgba(23, 23, 25, 0.3);
     margin: 0 0 28px 0;
 }
+.video_title_flex {
+    width: 591px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    margin: 0 0 8px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.video_title_plaulist_flex{
+    width: 351px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color:  rgba(23, 23, 25, 0.3);
+    margin: 0 0 28px 0;
+    display: flex;
+    justify-content: flex-start;
+}
+.video_container{
+    display: flex;
+}
+.video_container_text{
+    display: flex;
+    flex-direction: column;
+}
