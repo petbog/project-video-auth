@@ -110,3 +110,13 @@
     height: 80px;
     margin: 30px 0 0 0;
 }
+
+.img_sort_setting{
+    width: 37px;
+    height: 22px;
+    transition: .8s ease-in-out;
+}
+
+.img_sort_setting:hover{
+    transform: rotate(360deg);
+}
