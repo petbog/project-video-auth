@@ -1,33 +1,63 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import classes from './Modal.module.css'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCountVideo, setSortType } from '../../Redux/slise/SearchSlise'
+import simons from '../../img/imagesSimon.png'
 
 const Modal = () => {
-    const [value, setValue] = useState(20)
+    const sortTypeVideo = [
+        { name: 'Дата', typeSort: 'date' },
+        { name: 'Рейтинг', typeSort: 'rating' },
+        { name: 'Актуальность', typeSort: 'relevance' },
+        { name: 'Название', typeSort: 'title' },
+    ]
+    const dispatch = useDispatch()
+    const { sort,countVideo } = useSelector(state => state.search)
+    const modalRef=useRef(false)
+    const [searchMenu, SetsearchMenu] = useState(false);
 
     const handleChange = (e) => {
-        setValue(e.target.value)
+        dispatch(setCountVideo(e.target.value))
     }
+
+    const activSortVideo = (obj) => {
+        dispatch(setSortType(obj))
+        SetsearchMenu(false)
+    }
+    useEffect(() => {
+        const handleClickOutsade = (event) => {
+            if (modalRef.current && !event.composedPath().includes(modalRef.current)) {
+                SetsearchMenu(false)
+            }
+        }
+        document.body.addEventListener('click', handleClickOutsade)
+
+        return () => {
+            document.body.removeEventListener('click', handleClickOutsade)
+        }
+    }, [])
     return (
-        <div className={classes.modal}>
+        <div ref={modalRef}  className={classes.modal}>
             <div className={classes.modal_container}>
                 <div className={classes.modal_items}>
-                    <p className={classes.modal_title}>Запрос</p>
-                    <input type='text' className={classes.modal_input} placeholder='чем кормить кота' />
-                </div>
-                <div className={classes.modal_items}>
-                    <p className={classes.modal_title}>* Название</p>
-                    <input type='text' className={classes.modal_input} placeholder='Укажите название' />
-                </div>
-                <div className={classes.modal_items}>
-                    <p className={classes.modal_title}>Сортировать по</p>
-                    <input type='text' className={classes.modal_input} placeholder='Без сортировки' />
+                    <span onClick={() => { SetsearchMenu(!searchMenu) }} className={classes.modal_title}>Сортировать по :</span>
+                    <span className={classes.activSearch} onClick={() => { SetsearchMenu(!searchMenu) }} >{sort.name}</span>
+                    <div className={classes.modal_input}>
+                        {
+                          !searchMenu ?<img className={classes.searchImg} src={simons}/> : sortTypeVideo.map((obj) => <li
+                                className={`${sort.typeSort === obj.typeSort ? classes.activ : ''}`}
+                                onClick={() => { activSortVideo(obj) }}
+                                key={obj.name}>
+                                {obj.name}
+                            </li>)
+                        }
+                    </div>
                 </div>
                 <div className={classes.slider_container}>
-                    <div className="">
-                        <p className={classes.slider_text}>Максимальное количество</p>
+                    <div className={classes.slider_box}>
                         <input
                             className={classes.slider_input}
-                            value={value}
+                            value={countVideo}
                             type="range"
                             onChange={handleChange}
                             min={0}
@@ -35,13 +65,15 @@ const Modal = () => {
                             step={1}
                         />
                     </div>
-                    <p className={classes.slider_value} >{value}</p>
+                    <div className="">
+                        <p className={classes.slider_text}>Максимальное количество</p>
+                        <p className={classes.slider_value} >{countVideo}</p>
+                    </div>
                 </div>
 
-                <div className={classes.button_container}>
-                    <button className={classes.button_dontsave}>Не сохранять</button>
+                {/* <div className={classes.button_container}>
                     <button className={classes.button_save}>Сохранить</button>
-                </div>
+                </div> */}
             </div>
         </div>
     )

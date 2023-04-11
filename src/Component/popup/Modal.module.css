@@ -1,8 +1,13 @@
 .modal_container {
-    width: 500px;
-    height: 500px;
+    width: 220px;
+    height: 379px;
     background-color: #fff;
     margin: 50px auto;
+    position: absolute;
+    top: 276px;
+    right: 248px;
+    border-radius: 10px;
+    border: 1px solid cornflowerblue;
 }
 
 .modal_items {
@@ -17,79 +22,104 @@
     font-size: 16px;
     line-height: 22px;
     color: #272727;
-    margin: 26px 0px 4px 0;
+    margin: 26px 0px 16px 0;
 }
 
 .modal_input {
-    width: 430px;
-    height: 48px;
+    cursor: pointer;
+    width: 131px;
+    height: 95px;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 15px;
+    line-height: 22px;
     color: #090909;
     padding: 0 0 0 10px;
     border-radius: 10px;
     box-shadow: none;
-    border: 1px solid #9d9696;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: baseline;
 }
 
 .slider_container {
     display: flex;
-    justify-content: space-around;
-    margin: 43px 0 0 0;
+    flex-wrap: wrap;
+    margin: 22px 0 0 0;
+    flex-direction: column-reverse;
+    align-items: center;
+
 }
 
 .slider_value {
-    width: 70px;
-    height: 24px;
+    width: 37px;
+    height: 21px;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 17px;
+    line-height: 22px;
     color: #272727;
     padding: 5px 15px;
     border: 1px solid #9d9696;
     border-radius: 10px;
+    margin: 19px 0 0 54px;
 }
 
 .slider_input {
-    width: 263px;
-    height: 75px;
+    width: 158px;
+    height: 74px;
+    margin: -13px 0 0 -29px;
+    cursor: pointer;
 }
 
 .slider_text {
     font-weight: 400;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 22px;
     color: #272727;
-    margin: 0 0 -19px -56px;
+    margin: 0 18px 0 0;
 }
-.button_container{
+
+.button_container {
     display: flex;
     justify-content: space-around;
 }
-.button_dontsave {
-    width: 170px;
-    height: 50px;
+
+
+.button_save {
+    width: 141px;
+    height: 44px;
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    background-color: #fff;
-    border: 1px solid  #1390E5;
-    color: #1390E5;
-    border-radius: 10px;
-    padding: 14px 20px;
-    cursor: pointer;
-}
-.button_save{
-    width: 170px;
-    height: 50px;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 13px;
     background-color: #1390E5;
-    border: 1px solid  #1390E5;
+    border: 1px solid #1390E5;
     color: #fff;
     border-radius: 10px;
     padding: 14px 20px;
     cursor: pointer;
+}
+
+.button_save:hover {
+    background-color: #0b72b6;
+    transition: .5s ease;
+}
+
+.slider_box {
+    margin: 0 0 0 23px;
+}
+.activ{
+    color: #1390E5;
+}
+.activSearch{
+    color: #1390E5;
+    cursor: pointer;
+    margin: -6px 0 26px 0;
+}
+.searchImg{
+    width: 100px;
+    position: absolute;
+    top: -7px;
+    right: 17px;
+
 }

@@ -32,7 +32,7 @@
     background-color: #fff;
     border: 1px solid cornflowerblue;
     margin: 39px 0 0 0;
-    border-radius: 28px 12px 25px 5px;
+    border-radius: 30px;
     cursor: pointer;
     z-index: 1;
 }
@@ -43,7 +43,7 @@
     color: cornflowerblue;
     background-color: #fff;
     border: 1px solid cornflowerblue;
-    border-radius: 9px 32px 6px 25px;
+    border-radius:25px;
     cursor: pointer;
     z-index: 1;
 }
@@ -99,6 +99,7 @@
 
 .img_sort img {
     cursor: pointer;
+    position: relative;
 }
 
 .img_sort_list {

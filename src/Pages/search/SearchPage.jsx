@@ -22,7 +22,8 @@ import Modal from '../../Component/popup/Modal'
 
 const SearchPage = () => {
     const dispatch = useDispatch()
-    const { item, searchValue } = useSelector(state => state.search)
+    const { item, searchValue,sort,countVideo } = useSelector(state => state.search)
+    const sortVideo =sort.typeSort
     const video = item.items
     const navigate = useNavigate()
     const { isAuth, email } = useAuth()
@@ -60,9 +61,11 @@ const SearchPage = () => {
 
     useEffect(() => {
         dispatch(SearchVideo({
-            searchValue
+            searchValue,
+            countVideo,
+            sortVideo
         }))
-    }, [dispatch, searchValue])
+    }, [dispatch, searchValue,countVideo,sortVideo])
 
 
     useEffect(() => {
