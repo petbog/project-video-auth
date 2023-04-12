@@ -6,11 +6,26 @@ const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
 export const SearchVideo = createAsyncThunk(
     'search/SearchVideo',
     async function (params) {
-        const { searchValue, countVideo,sortVideo } = params
+        const { searchValue, countVideo, sortVideo } = params
         const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=${sortVideo}&maxResults=${countVideo}&q=${searchValue}`)
         return data
     }
 )
+
+
+// export const videoLike = createAsyncThunk(
+//     'search/videoLike',
+//     async function (idvideo) {
+//         const params = {
+//             part: "statistics",
+//             // id: idvideo.join(','),
+//             key: api_key,
+//         }
+//         const data = await axios.get('https://www.googleapis.com/youtube/v3/videos')
+//         console.log(data)
+//         return data
+//     }
+// )
 
 
 

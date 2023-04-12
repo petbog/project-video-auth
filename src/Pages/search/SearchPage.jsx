@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
 import SerchVideo from '../../Component/search/SerchVideo';
-import { SearchVideo } from '../../Redux/slise/SearchSlise';
+import { SearchVideo, videoLike } from '../../Redux/slise/SearchSlise';
 import Video from '../../Component/video/Video';
 import TitleSearch from '../../Component/TitleSearch/TitleSearch';
 import grid_activ from '../../img/grid_activ.png'
@@ -16,7 +16,6 @@ import setting from '../../img/setting.svg'
 import MyPreloader from '../../preloader/Preloader'
 import simons from '../../img/92513305_simons_cat_013450x450svg.png'
 import Modal from '../../Component/popup/Modal'
-import axios from 'axios';
 
 
 
@@ -33,7 +32,6 @@ const SearchPage = () => {
     const [statusGridTrue, setStatusGridTrue] = useState(true)
     const [settingMenu, SetSettingMenu] = useState(false)
     const imgRef = useRef(null)
-
 
 
     useEffect(() => {
@@ -69,6 +67,11 @@ const SearchPage = () => {
         }))
     }, [dispatch, searchValue, countVideo, sortVideo])
 
+    // useEffect(() => {
+    //     dispatch(videoLike({
+    //         video
+    //     }))
+    // }, [dispatch,video])
 
     useEffect(() => {
         if (!isAuth) {
