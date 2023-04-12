@@ -16,14 +16,15 @@ import setting from '../../img/setting.svg'
 import MyPreloader from '../../preloader/Preloader'
 import simons from '../../img/92513305_simons_cat_013450x450svg.png'
 import Modal from '../../Component/popup/Modal'
+import axios from 'axios';
 
 
 
 
 const SearchPage = () => {
     const dispatch = useDispatch()
-    const { item, searchValue,sort,countVideo } = useSelector(state => state.search)
-    const sortVideo =sort.typeSort
+    const { item, searchValue, sort, countVideo } = useSelector(state => state.search)
+    const sortVideo = sort.typeSort
     const video = item.items
     const navigate = useNavigate()
     const { isAuth, email } = useAuth()
@@ -32,6 +33,7 @@ const SearchPage = () => {
     const [statusGridTrue, setStatusGridTrue] = useState(true)
     const [settingMenu, SetSettingMenu] = useState(false)
     const imgRef = useRef(null)
+
 
 
     useEffect(() => {
@@ -65,7 +67,7 @@ const SearchPage = () => {
             countVideo,
             sortVideo
         }))
-    }, [dispatch, searchValue,countVideo,sortVideo])
+    }, [dispatch, searchValue, countVideo, sortVideo])
 
 
     useEffect(() => {
@@ -97,7 +99,7 @@ const SearchPage = () => {
                             <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusList} alt="" />
                             <img onClick={() => SetSettingMenu(!settingMenu)} ref={imgRef} className={classes.img_sort_setting} src={setting} alt="" />
                             {
-                                settingMenu && <Modal/>
+                                settingMenu && <Modal />
                             }
                         </div>
                     </div>
