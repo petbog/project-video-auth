@@ -13,21 +13,6 @@ export const SearchVideo = createAsyncThunk(
 )
 
 
-// export const videoLike = createAsyncThunk(
-//     'search/videoLike',
-//     async function (idvideo) {
-//         const params = {
-//             part: "statistics",
-//             // id: idvideo.join(','),
-//             key: api_key,
-//         }
-//         const data = await axios.get('https://www.googleapis.com/youtube/v3/videos')
-//         console.log(data)
-//         return data
-//     }
-// )
-
-
 
 
 const initialState = {
