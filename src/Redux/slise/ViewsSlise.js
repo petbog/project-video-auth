@@ -24,11 +24,6 @@ const ViewsSlise = createSlice({
     name: 'views',
     initialState,
     reducers: {
-        // setViews(state, action) {
-        //     state.views.push({
-        //         ...action.payload
-        //     })
-        // }
         setViews(state, action) {
             state.views= action.payload
         }

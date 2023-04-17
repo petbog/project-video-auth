@@ -71,7 +71,7 @@ const SearchPage = () => {
 
 
     useEffect((video) => {
-        const idVideo = video.reduce((acc, item) => {
+       const idVideo = video.reduce((acc, item) => {
             acc.push(item.id.videoId)
             return acc
         }, [])
