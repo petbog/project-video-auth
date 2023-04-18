@@ -33,7 +33,8 @@ const SearchPage = () => {
     const [statusGridTrue, setStatusGridTrue] = useState(true)
     const [settingMenu, SetSettingMenu] = useState(false)
     const imgRef = useRef(null)
-    const { views } = useSelector(state => state.views)
+    const { items } = useSelector(state => state.views)
+
 
 
     useEffect(() => {
@@ -70,19 +71,21 @@ const SearchPage = () => {
     }, [dispatch, searchValue, countVideo, sortVideo])
 
 
-    useEffect((video) => {
-       const idVideo = video.reduce((acc, item) => {
-            acc.push(item.id.videoId)
-            return acc
-        }, [])
-        dispatch(setViews(idVideo))
+    useEffect(() => {
+        if (video) {
+            const idVideo = video.reduce((acc, item) => {
+                acc.push(item.id.videoId)
+                return acc
+            }, [])
+            dispatch(setViews(idVideo))
+        }
     }, [video, dispatch])
 
     useEffect(() => {
         dispatch(GetViewsCount({
-            views
+            items
         }))
-    }, [views, dispatch])
+    }, [items, dispatch])
 
 
 

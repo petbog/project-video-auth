@@ -7,16 +7,18 @@ const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
 export const GetViewsCount = createAsyncThunk(
     'views/GetViewsCount',
     async function (params) {
-        const { views } = params
-        const ids = views.join(',')
-        const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/videos?key=${api_key}&part=snippet&id=${ids}`)
-        return data
+        const { items } = params
+        const ids = items.join(',')
+        const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/videos?key=${api_key}&part=snippet,statistics&id=${ids}`)
+        console.log(data)
+        //    return data
     }
 )
 
-
+// "snippet,statistics",
 const initialState = {
     views: [],
+    items: [],
     status: 'loading' || 'success' || 'error',
 }
 
@@ -25,7 +27,7 @@ const ViewsSlise = createSlice({
     initialState,
     reducers: {
         setViews(state, action) {
-            state.views= action.payload
+            state.items = action.payload
         }
     },
     extraReducers: {
