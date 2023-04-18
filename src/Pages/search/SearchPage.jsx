@@ -33,14 +33,15 @@ const SearchPage = () => {
     const [statusGridTrue, setStatusGridTrue] = useState(true)
     const [settingMenu, SetSettingMenu] = useState(false)
     const imgRef = useRef(null)
-    const { items } = useSelector(state => state.views)
+    const { items, views } = useSelector(state => state.views)
+    const fullVideo = views.items
 
 
 
     useEffect(() => {
         const handleClickOutsade = (event) => {
             if (imgRef.current && !event.composedPath().includes(imgRef.current)) {
-                SetSettingMenu(false)
+                // SetSettingMenu(false)
             }
         }
         document.body.addEventListener('click', handleClickOutsade)
@@ -124,7 +125,7 @@ const SearchPage = () => {
                     </div>
                     <div className={`${statusGrid === grid_activ ? classes.grid : classes.flex}`}>
                         {
-                            video ? video.map((item, index) =>
+                            fullVideo ? fullVideo.map((item, index) =>
                                 <Video item={item} key={index} statusGridTrue={statusGridTrue} />
                             ) : skeleton
                         }

@@ -9,14 +9,16 @@ const Video = ({ item, index, statusGridTrue }) => {
                 <iframe
                     className={classes.video}
                     key={index}
-                    src={`https://www.youtube.com/embed/${item.id.videoId}`}
+                    src={`https://www.youtube.com/embed/${item.id}`}
                     allowfullscreen="allowfullscreen"
                     title='video'
                 ></iframe>
                 <div className={classes.video_container_text}>
                     <p className={`${statusGridTrue ? classes.video_title : classes.video_title_flex}`}>{item.snippet.title}</p>
                     <p className={`${statusGridTrue ? classes.video_title_plaulist : classes.video_title_plaulist_flex}`}>{item.snippet.channelTitle}</p>
-                    {/* <img src={item.snippet.thumbnails.medium.url} alt="" /> */}
+                    <div className="">
+                        <span>{item.statistics.viewCount}</span> <span>Просмотров</span>
+                    </div>
                 </div>
 
             </div>
