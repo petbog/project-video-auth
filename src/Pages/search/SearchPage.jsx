@@ -104,7 +104,7 @@ const SearchPage = () => {
             <div className={classes.home_header}>
                 <img className={classes.simon} src={simons} alt="" />
                 <div className={classes.home_header_container}>
-                    <p className={classes.home_user}>welcome {email}</p>
+                    <p className={classes.home_user}>welcome<br/> {email}</p>
                     <button onClick={() => { dispatch(removeUser()) }} className={classes.home_exid}>Выйти</button>
                 </div>
             </div>

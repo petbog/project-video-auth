@@ -1,8 +1,10 @@
 .title_search {
+    width: 141px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
     color: #272727;
+    margin: 0 0 0 25px;
 }
 
 .title_search_inner {
@@ -20,4 +22,18 @@
 .title_search_inner{
     width: 378px;
     display: flex;
+}
+@media(max-width:600px){
+    .title_search_inner{
+        max-width: 200px;
+    }
+}
+@media(max-width:391px){
+    .title_search{
+       width: 113px;
+      font-size: 13px;
+    }
+    .title_search_inner{
+        max-width: 160px;
+    }
 }
