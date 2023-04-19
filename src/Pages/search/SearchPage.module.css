@@ -189,6 +189,16 @@
     .serach_title{
        font-size: 28px;
     }
+    .grid {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction:row
+    }
+    .grid svg {
+      height: 250px;
+    }
+    
 }
 @media(max-width:387px){
     .simon{

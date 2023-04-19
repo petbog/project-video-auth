@@ -164,6 +164,32 @@
         top: 304px;
         right: 183px;
     }
+.modal_title{
+    font-size: 14px;
+    line-height: 16px;
+    margin: 12px 0px 10px 0;
+}
+.modal_input{
+    font-size: 13px;
+    margin: -15px 0px 0 0px;
+}
+.searchImg{
+    width: 77px;
+    top: 2px;
+    right: 20px;
+}
+.slider_text{
+    font-size: 13px;
+    margin: -17px 16px 0 0;
+}
+.slider_value{
+    margin: 14px 0 0 54px
+}
+.modal_container{
+    width: 193px;
+    height: 284px;
+}
+
 }
 @media(max-width:424px){
     .modal_container {

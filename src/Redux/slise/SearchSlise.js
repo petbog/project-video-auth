@@ -18,7 +18,7 @@ export const SearchVideo = createAsyncThunk(
 const initialState = {
     item: [],
     status: 'loading' || 'success' || 'error',
-    searchValue: 'Котики',
+    searchValue: null,
     sort: {
         name: 'Дата',
         typeSort: 'date'
