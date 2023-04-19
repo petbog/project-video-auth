@@ -16,8 +16,8 @@ const Video = ({ item, index, statusGridTrue }) => {
                 <div className={classes.video_container_text}>
                     <p className={`${statusGridTrue ? classes.video_title : classes.video_title_flex}`}>{item.snippet.title}</p>
                     <p className={`${statusGridTrue ? classes.video_title_plaulist : classes.video_title_plaulist_flex}`}>{item.snippet.channelTitle}</p>
-                    <div className="">
-                        <span>{item.statistics.viewCount}</span> <span>Просмотров</span>
+                    <div className={classes.views}>
+                         <span className={classes.views_item} > {item.statistics.viewCount}</span><span>  тыс.просмотров </span>
                     </div>
                 </div>
 

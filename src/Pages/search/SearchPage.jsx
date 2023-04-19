@@ -53,8 +53,8 @@ const SearchPage = () => {
 
     const handleStatusVideoList = () => {
         if (statusGrid === grid_activ) {
-            setStatusList(grid_desibel)
-            setStatusGrid(list_activ)
+            setStatusList(list_activ)
+            setStatusGrid(grid_desibel)
             setStatusGridTrue(false)
         } else {
             setStatusList(list_desibel)

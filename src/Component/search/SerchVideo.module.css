@@ -14,7 +14,7 @@
 .search_button {
     width: 150px;
     height: 55px;
-    border-radius:0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
     border: 1px solid #777474;
     background-color: #1390E5;
     color: #fff;
@@ -25,16 +25,18 @@
     cursor: pointer;
 }
 
-.search_button:hover{
+.search_button:hover {
     background-color: #056cb1;
 }
-.search{
+
+.search {
     position: relative;
     max-width: 1041px;
     display: flex;
     justify-content: center;
 }
-.close{
+
+.close {
     position: absolute;
     top: 13px;
     right: 24%;
@@ -42,15 +44,16 @@
     height: 30px;
     cursor: pointer;
 }
-.icons_search{
+
+.icons_search {
     position: relative;
     top: 1px;
     left: 45px;
     width: 35px;
 }
 
-@media(max-width:853px){
-    .close{
+@media(max-width:853px) {
+    .close {
         position: absolute;
         top: 13px;
         right: 20%;
@@ -59,74 +62,87 @@
         cursor: pointer;
     }
 }
-@media(max-width:753px){
-    .search_button{
+
+@media(max-width:753px) {
+    .search_button {
         width: 117px;
         height: 43px;
         font-size: 17px;
         line-height: 20px;
     }
-    .search_input{
+
+    .search_input {
         height: 39px;
         font-size: 17px;
         padding: 0 46px 0 33px;
     }
-    .close{
+
+    .close {
         top: 6px;
         right: 16%;
         width: 17px;
         height: 30px;
     }
-    .icons_search{
+
+    .icons_search {
         top: 0px;
         left: 32px;
         width: 24px;
     }
 
 }
-@media(max-width:420px){
-    .search_button{
+
+@media(max-width:420px) {
+    .search_button {
         width: 111px;
         height: 37px;
         font-size: 13px;
         line-height: 20px;
     }
-    .search_input{
+
+    .search_input {
         height: 34px;
         font-size: 14px;
         padding: 0 46px 0 25px;
     }
-    .close{
+
+    .close {
         top: 6px;
         right: 16%;
         width: 16px;
         height: 25px;
     }
-    .icons_search{
+
+    .icons_search {
         top: 0px;
         left: 27px;
         width: 20px;
     }
 }
-@media(max-width:340px){
-    .search_button{
+
+@media(max-width:340px) {
+    .search_button {
         width: 111px;
         height: 37px;
         font-size: 12px;
         line-height: 20px;
+        margin: 0 6px 0 0;
     }
-    .search_input{
+
+    .search_input {
         height: 34px;
         font-size: 14px;
         padding: 0 46px 0 25px;
     }
-    .close{
+
+    .close {
         top: 12px;
         right: 17%;
         width: 14px;
         height: 13px;
     }
-    .icons_search{
+
+    .icons_search {
         top: 0px;
         left: 27px;
         width: 20px;
