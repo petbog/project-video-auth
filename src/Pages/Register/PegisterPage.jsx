@@ -7,12 +7,17 @@ const PegisterPage = () => {
     return (
         <div className={classes.login}>
             <div className={classes.login_container}>
-                <p className={classes.login_title}> Регистрация</p>
+                <div className={classes.login_title_container}>
+                    <p className={classes.login_title}> Регистрация</p>
+                </div>
                 <SindUp />
-                <p className={classes.register_text}>
-                    Если есть аккаунт
-                    <Link className={classes.register_link}to='/Login'> Авторизация</Link>
-                </p>
+                <div className={classes.register_text_container}>
+                    <p className={classes.register_text}>
+                        Если есть аккаунт
+                        <Link className={classes.register_link} to='/Login'> Авторизация</Link>
+                    </p>
+                </div>
+
             </div>
 
         </div>

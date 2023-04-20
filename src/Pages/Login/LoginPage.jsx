@@ -11,8 +11,10 @@ const LoginPage = () => {
         <div className={classes.login}>
             <div className={classes.login_container}>
                 <p className={classes.login_title}> Вход</p>
-                <Login  />
-                <Link className={classes.login_link} to='/Register'> Регистрация</Link>
+                <Login />
+                <div className={classes.login_link_container}>
+                    <Link className={classes.login_link} to='/Register'> Регистрация</Link>
+                </div>
             </div>
         </div>
     )

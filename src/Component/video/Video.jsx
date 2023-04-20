@@ -7,7 +7,7 @@ const Video = ({ item, index, statusGridTrue }) => {
         <div className="">
             <div className={`${statusGridTrue ? '' : classes.video_container}`}>
                 <iframe
-                    className={classes.video}
+                className={`${statusGridTrue ? classes.video: classes.video_flex}`}
                     key={index}
                     src={`https://www.youtube.com/embed/${item.id}`}
                     allowfullscreen="allowfullscreen"

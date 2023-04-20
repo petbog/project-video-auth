@@ -1,18 +1,21 @@
-.Form_inner{
+.Form_inner {
     width: 400px;
     height: 340px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
+    align-items: center;
 
 }
-.form_title{
+
+.form_title {
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
     color: #9c9c9e;
 }
-.Form_email{
+
+.Form_email {
     width: 334px;
     height: 48px;
     border-radius: 10px;
@@ -22,11 +25,11 @@
     line-height: 24px;
     color: #272727;
     padding: 0 0 0 10px;
-    background-color:#fff;
+    background-color: #fff;
     cursor: pointer;
 }
 
-.Form_pass{
+.Form_pass {
     width: 334px;
     height: 48px;
     border-radius: 10px;
@@ -38,7 +41,8 @@
     padding: 0 0 0 10px;
     cursor: pointer;
 }
-.Form_button{
+
+.Form_button {
     width: 176px;
     height: 52px;
     border-radius: 10px;
@@ -47,23 +51,42 @@
     border: none;
     cursor: pointer;
 }
-.Form_button:hover{
+
+.Form_button:hover {
     transition: 0.5s;
     background-color: #0b6cac;
 }
-.Button_container{
+
+.Button_container {
     display: flex;
     justify-content: center;
     margin: 40px 0 0 0;
 }
-.Form_container{
+
+.Form_container {
     position: relative;
 }
-.form_img{
+
+.form_img {
     position: absolute;
     width: 25px;
     height: 25px;
-    right: 48px;
+    right: 15px;
     top: 65px;
     cursor: pointer;
+}
+
+@media(max-width:534px) {
+    .Form_inner{
+        width: 256px;
+    }
+    .Form_email {
+        width: 229px;
+        font-size: 16px;
+    }
+
+    .Form_pass {
+        width: 229px;
+        font-size: 16px;
+    }
 }

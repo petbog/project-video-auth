@@ -11,7 +11,10 @@
     background-color: #fff;
     margin: 0 auto;
 }
-
+.login_title_container{
+    display: flex;
+    justify-content: center;
+}
 .login_title{
     font-weight: 500;
     font-size: 18px;
@@ -24,6 +27,9 @@
     font-size: 18px;
     line-height: 28px;
     color:#000000 ;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
 }
 .register_link{
     text-decoration: none;
@@ -31,9 +37,18 @@
     background-color: #1390E5;
     border-radius: 14px;
     color: white;
-    margin: 0 0 0 15px;
+    margin: 9px 0 0 15px;
 }
 .register_link:hover{
     transition: 0.5s;
     background-color: #0b6cac;
+}
+.register_text_container{
+    display: flex;
+    justify-content: center;
+}
+@media(max-width:512px){
+    .login_container{
+        width: 300px;
+    }
 }
