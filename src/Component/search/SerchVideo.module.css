@@ -122,23 +122,24 @@
 
 @media(max-width:340px) {
     .search_button {
-        width: 111px;
+        width: 56px;
         height: 37px;
-        font-size: 12px;
+        font-size: 11px;
         line-height: 20px;
         margin: 0 6px 0 0;
     }
 
     .search_input {
+        width: 127px;
         height: 34px;
-        font-size: 14px;
+        font-size: 11px;
         padding: 0 46px 0 25px;
     }
 
     .close {
         top: 12px;
-        right: 17%;
-        width: 14px;
+        right: 30%;
+        width: 13px;
         height: 13px;
     }
 

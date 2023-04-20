@@ -1,0 +1,120 @@
+.simon {
+    width: 82px;
+    height: 80px;
+    padding: 25px 0 0 0;
+}
+
+.home {
+    background-color: #fff;
+    box-shadow: -2px 9px 8px -1px rgba(7, 129, 223, 0.37);
+    height: 125px;
+}
+
+.home_container {
+    max-width: 1070px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.home_header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.home_user {
+    padding: 10px 25px;
+    color: cornflowerblue;
+    background-color: #fff;
+    border: 1px solid cornflowerblue;
+    margin: 39px 0 0 0;
+    border-radius: 30px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.home_exid {
+    padding: 0px 20px;
+    margin: 39px 0 0 40px;
+    color: cornflowerblue;
+    background-color: #fff;
+    border: 1px solid cornflowerblue;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.home_header_container {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+}
+
+@media(max-width:750px) {
+    .home_user {
+        padding: 5px 15px;
+        height: 42px;
+        margin: 42px 0 0 0;
+        font-size: 15px;
+    }
+
+    .home_exid {
+        padding: 14px 24px;
+        height: 42px;
+        margin: 42px 37px 0 0;
+        height: 54px;
+        font-size: 15px;
+    }
+}
+
+@media(max-width:500px) {
+    .simon {
+        width: 60px;
+        height: 60px;
+        margin: -9px 0 0 0;
+    }
+
+    .home {
+        height: 91px;
+    }
+
+    .home_user {
+        padding: 5px 15px;
+        height: 36px;
+        font-size: 12px;
+        margin: 39px 0 0 0;
+    }
+
+    .home_header_container {
+        display: flex;
+        justify-content: space-around;
+        min-width: 251px;
+        margin: -19px 0 0px 0;
+    }
+    .home_exid {
+        font-size: 0px;
+        border: none;
+        background-image: url(../../img//logout_icon_151219.svg);
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 12px;
+        margin: 50px 0 0 0;
+        padding: 14px 0px;
+    }
+}
+
+
+@media(max-width:387px) {
+    .home_user {
+        padding: 6px 19px;
+        height: 39px;
+        margin: 35px 0 0 0;
+        font-size: 13px;
+    }
+    .home_header_container {
+        display: flex;
+        justify-content: space-around;
+        min-width: 210px;
+        margin: -19px 0 0px 0;
+    }
+
+}

@@ -27,7 +27,7 @@ const Modal = () => {
     const handleChangeDebounse = useCallback(
         debounce((value) => {
             dispatch(setCountVideo(value));
-        }, 500), []
+        }, 100), []
     )
 
     const activSortVideo = (obj) => {

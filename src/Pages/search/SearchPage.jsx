@@ -1,6 +1,5 @@
 import { useAuth } from '../../hooks/use-auth'
 import { useDispatch, useSelector } from 'react-redux';
-import { removeUser } from '../../Redux/slise/UserSlice'
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
@@ -14,9 +13,9 @@ import list_activ from '../../img/list_activ.png'
 import list_desibel from '../../img/list_desibel.png'
 import setting from '../../img/setting.svg'
 import MyPreloader from '../../preloader/Preloader'
-import simons from '../../img/92513305_simons_cat_013450x450svg.png'
 import Modal from '../../Component/popup/Modal'
 import { GetViewsCount, setViews } from '../../Redux/slise/ViewsSlise';
+import Header from '../../Component/Header/Header';
 
 
 
@@ -27,7 +26,7 @@ const SearchPage = () => {
     const sortVideo = sort.typeSort
     const video = item.items
     const navigate = useNavigate()
-    const { isAuth, email } = useAuth()
+    const { isAuth } = useAuth()
     const [statusGrid, setStatusGrid] = useState(grid_activ)
     const [statusList, setStatusList] = useState(list_desibel)
     const [statusGridTrue, setStatusGridTrue] = useState(true)
@@ -100,14 +99,7 @@ const SearchPage = () => {
 
     return isAuth ? (
         <div className={classes.home}>
-            <div className={classes.background_header}></div>
-            <div className={classes.home_header}>
-                <img className={classes.simon} src={simons} alt="" />
-                <div className={classes.home_header_container}>
-                    <p className={classes.home_user}>welcome<br/> {email}</p>
-                    <button onClick={() => { dispatch(removeUser()) }} className={classes.home_exid}>Выйти</button>
-                </div>
-            </div>
+            <Header />
             <div className={classes.container}>
                 <div className={classes.wraper_serch}>
                     <p className={classes.serach_title}>Поиск видео</p>
