@@ -43,7 +43,7 @@
 
 .titleSearch {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
     margin: 10px 0;
