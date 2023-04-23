@@ -9,7 +9,7 @@ export const GetViewsCount = createAsyncThunk(
     async function (params) {
         const { items } = params
         const ids = items.join(',')
-        const { data } = await axios.get(`https://www.fgoogleapis.com/youtube/v3/videos?key=${api_key}&part=snippet,statistics&id=${ids}`)
+        const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/videos?key=${api_key}&part=snippet,statistics&id=${ids}`)
         return data
     }
 )

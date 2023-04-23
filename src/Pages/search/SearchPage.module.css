@@ -74,7 +74,8 @@
 
 @media(max-width:700px) {
     .titleSearch {
-        justify-content: flex-start;
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .img_sort {

@@ -7,7 +7,7 @@ export const SearchVideo = createAsyncThunk(
     'search/SearchVideo',
     async function (params) {
         const { searchValue, countVideo, sortVideo } = params
-        const { data } = await axios.get(`https://www.fgoogleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=${sortVideo}&maxResults=${countVideo}&q=${searchValue}`)
+        const { data } = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=${api_key}&part=snippet,id&order=${sortVideo}&maxResults=${countVideo}&q=${searchValue}`)
         return data
     }
 )

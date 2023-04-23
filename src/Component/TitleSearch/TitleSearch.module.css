@@ -12,28 +12,40 @@
     font-size: 18px;
     line-height: 24px;
     color: #272727;
-    margin-left:10px;
-    
+    margin-left: 10px;
+
 }
-.title_container{
+
+.title_container {
     display: flex;
     align-items: center;
 }
-.title_search_inner{
+
+.title_search_inner {
     width: 378px;
     display: flex;
 }
-@media(max-width:600px){
-    .title_search_inner{
-        max-width: 200px;
+
+@media(max-width:600px) {
+    .title_search_inner {
+        width: 175px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
     }
 }
-@media(max-width:391px){
-    .title_search{
-       width: 113px;
-      font-size: 13px;
+
+@media(max-width:391px) {
+    .title_search {
+        width: 105px;
+        font-size: 12px;
     }
-    .title_search_inner{
-        max-width: 160px;
+
+    .title_search_inner {
+        width: 138px;
+        font-weight: 500;
+        font-size: 14px;
+        margin-left: 5px;
     }
 }
