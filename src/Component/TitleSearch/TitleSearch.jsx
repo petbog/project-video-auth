@@ -8,7 +8,7 @@ const TitleSearch = () => {
         <div className="">
             <div className="">
                 <div className={classes.title_container}>
-                    <h3 className={classes.title_search}>Видео по запросу :</h3>
+                    <div className={classes.title_search}>Поиск видео :</div>
                     <p className={classes.title_search_inner}>{searchValue}</p>
                 </div>
                 <div className="">

@@ -31,7 +31,7 @@ const handleToggle=()=>{
                 <input className={classes.Form_email} type='email'
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder='email'
+                    placeholder='gmail'
                 />
             </div>
             <div className={classes.Form_container}>

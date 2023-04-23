@@ -1,5 +1,5 @@
 .title_search {
-    width: 141px;
+    width: 106px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -38,8 +38,10 @@
 
 @media(max-width:391px) {
     .title_search {
-        width: 105px;
+        width: 86px;
         font-size: 12px;
+        height: 19px;
+        padding: 0 0 5px 0;
     }
 
     .title_search_inner {
