@@ -9,6 +9,7 @@
     line-height: 20px;
     padding: 0 46px 0 46px;
     cursor: pointer;
+    outline: none;
 }
 
 .search_button {

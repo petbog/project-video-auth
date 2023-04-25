@@ -29,15 +29,20 @@
 
 .login_link {
     text-decoration: none;
-    color: #000000;
-    font-weight: 400;
-    font-size: 18px;
+    color: #060606;
+    font-weight: 500;
+    font-size: 17px;
     line-height: 28px;
+    padding: 8px 39px;
+    border-radius: 10px;
+    background-color: #ddf1ff;
+    border: 1px solid #1071b3;
 }
 
 .login_link:hover {
-    font-weight: 500;
+    background-color: #1071b3;
     transition: all 0.3s;
+    color: #fff;
 }
 
 @media(max-width:520px) {
