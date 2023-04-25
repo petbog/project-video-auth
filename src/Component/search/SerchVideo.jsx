@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import classes from './SerchVideo.module.css'
 import { useDispatch } from 'react-redux'
 import { getSearchValue } from '../../Redux/slise/SearchSlise'
@@ -12,6 +12,9 @@ const SerchVideo = () => {
     const dispatch = useDispatch()
     const [value, setValue] = useState('')
 
+    const keyRef = useRef()
+
+
     const onChangeInput = (e) => {
         setValue(e.target.value)
     }
@@ -21,13 +24,28 @@ const SerchVideo = () => {
         setValue('')
     }
 
-    const onClickImgClose =()=>{
+    const onClickImgClose = () => {
         setValue('')
     }
+
+    useEffect(() => {
+        document.addEventListener('keydown', setKey)
+
+    }, [value])
+
+    const setKey = (e) => {
+        if (e.key === 'Enter') {
+            dispatch(getSearchValue(value))
+            setValue('')
+        }
+    }
+
+
     return (
         <div className={classes.search}>
             <img className={classes.icons_search} src={icons_search} alt="" />
             <input
+                ref={keyRef}
                 value={value}
                 onChange={onChangeInput}
                 className={classes.search_input}
@@ -39,6 +57,7 @@ const SerchVideo = () => {
             }
 
             <button
+                onKeyDown={setKey}
                 onClick={onClickButton}
                 className={classes.search_button}>Найти
             </button>

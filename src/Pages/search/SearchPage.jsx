@@ -33,6 +33,7 @@ const SearchPage = () => {
     const [settingMenu, SetSettingMenu] = useState(false)
     const imgRef = useRef(null)
     const { items, views } = useSelector(state => state.views)
+    const { email } = useSelector(state => state.user)
     const fullVideo = views.items
 
 
@@ -89,45 +90,42 @@ const SearchPage = () => {
 
 
 
-    useEffect(() => {
-        if (!isAuth) {
-            navigate('/Login')
-        }
-    }, [isAuth, navigate])
-
     const skeleton = [...new Array(8)].map((_, i) => <MyPreloader key={i} />);
-
-    return isAuth ? (
-        <div className={classes.home}>
-            <Header />
-            <div className={classes.container}>
-                <div className={classes.wraper_serch}>
-                    <p className={classes.serach_title}>Поиск видео</p>
-                    <SerchVideo />
-                    <div className={classes.titleSearch}>
-                        <TitleSearch />
-                        <div className={classes.img_sort}>
-                            <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusGrid} alt="" />
-                            <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusList} alt="" />
-                            <img onClick={() => SetSettingMenu(!settingMenu)} ref={imgRef} className={classes.img_sort_setting} src={setting} alt="" />
+    if (email === '') {
+        navigate('/Login')
+    } else {
+        return (
+            <div className={classes.home}>
+                <Header />
+                <div className={classes.container}>
+                    <div className={classes.wraper_serch}>
+                        <p className={classes.serach_title}>Поиск видео</p>
+                        <SerchVideo />
+                        <div className={classes.titleSearch}>
+                            <TitleSearch />
+                            <div className={classes.img_sort}>
+                                <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusGrid} alt="" />
+                                <img onClick={handleStatusVideoList} className={classes.img_sort_list} src={statusList} alt="" />
+                                <img onClick={() => SetSettingMenu(!settingMenu)} ref={imgRef} className={classes.img_sort_setting} src={setting} alt="" />
+                                {
+                                    settingMenu && <Modal />
+                                }
+                            </div>
+                        </div>
+                        <div className={`${statusGrid === grid_activ ? classes.grid : classes.flex}`}>
                             {
-                                settingMenu && <Modal />
+                                fullVideo ? fullVideo.map((item, index) =>
+                                    <Video item={item} key={index} statusGridTrue={statusGridTrue} />
+                                ) : skeleton
                             }
                         </div>
-                    </div>
-                    <div className={`${statusGrid === grid_activ ? classes.grid : classes.flex}`}>
-                        {
-                            fullVideo ? fullVideo.map((item, index) =>
-                                <Video item={item} key={index} statusGridTrue={statusGridTrue} />
-                            ) : skeleton
-                        }
+
                     </div>
 
                 </div>
-
             </div>
-        </div>
-    ) : navigate('/Login')
+        )
+    }
 }
 
 export default SearchPage
