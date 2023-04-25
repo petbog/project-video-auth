@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
+// const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
+const api_key = `AIzaSyBQ_CVy1nc8t2YebofCtvFS135p6tolsJM`
 
 export const SearchVideo = createAsyncThunk(
     'search/SearchVideo',
