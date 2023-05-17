@@ -8,13 +8,14 @@ const SindUp = () => {
     const dispatch = useDispatch()
     const push = useNavigate()
 
-    const handleRegister = (email, password) => {
+    const handleRegister = (email:string, password:string) => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(({ user }) => {
                 dispatch(setUser({
                     email: user.email,
                     id: user.uid,
+                    // @ts-ignore
                     token: user.accessToken,
                 }))
                 push('/')

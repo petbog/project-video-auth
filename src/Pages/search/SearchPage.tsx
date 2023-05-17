@@ -1,7 +1,7 @@
 import { useAuth } from '../../hooks/use-auth'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
 import SerchVideo from '../../Component/search/SerchVideo';
 import { SearchVideo } from '../../Redux/slise/SearchSlise';
@@ -19,9 +19,10 @@ import Header from '../../Component/Header/Header';
 
 
 
-
-const SearchPage = () => {
+        //@ts-ignore
+const SearchPage:React.FC = () => {
     const dispatch = useDispatch()
+        //@ts-ignore
     const { item, searchValue, sort, countVideo } = useSelector(state => state.search)
     const sortVideo = sort.typeSort
     const video = item.items
@@ -29,17 +30,19 @@ const SearchPage = () => {
     const { isAuth } = useAuth()
     const [statusGrid, setStatusGrid] = useState(grid_activ)
     const [statusList, setStatusList] = useState(list_desibel)
-    const [statusGridTrue, setStatusGridTrue] = useState(true)
-    const [settingMenu, SetSettingMenu] = useState(false)
+    const [statusGridTrue, setStatusGridTrue] = useState<boolean>(true)
+    const [settingMenu, SetSettingMenu] = useState<boolean>(false)
     const imgRef = useRef(null)
+        //@ts-ignore
     const { items, views } = useSelector(state => state.views)
+        //@ts-ignore
     const { email } = useSelector(state => state.user)
     const fullVideo = views.items
 
 
 
     useEffect(() => {
-        const handleClickOutsade = (event) => {
+        const handleClickOutsade = (event: any) => {
             if (imgRef.current && !event.composedPath().includes(imgRef.current)) {
                 // SetSettingMenu(false)
             }
@@ -64,6 +67,7 @@ const SearchPage = () => {
     }
 
     useEffect(() => {
+            //@ts-ignore
         dispatch(SearchVideo({
             searchValue,
             countVideo,
@@ -74,7 +78,7 @@ const SearchPage = () => {
 
     useEffect(() => {
         if (video) {
-            const idVideo = video.reduce((acc, item) => {
+            const idVideo = video.reduce((acc:any, item:any) => {
                 acc.push(item.id.videoId)
                 return acc
             }, [])
@@ -83,6 +87,7 @@ const SearchPage = () => {
     }, [video, dispatch])
 
     useEffect(() => {
+        //@ts-ignore
         dispatch(GetViewsCount({
             items
         }))
@@ -114,8 +119,8 @@ const SearchPage = () => {
                         </div>
                         <div className={`${statusGrid === grid_activ ? classes.grid : classes.flex}`}>
                             {
-                                fullVideo ? fullVideo.map((item, index) =>
-                                    <Video item={item} key={index} statusGridTrue={statusGridTrue} />
+                                fullVideo ? fullVideo.map((item:string, i: number) =>
+                                    <Video item={item} key={i} statusGridTrue={statusGridTrue} index={0} />
                                 ) : skeleton
                             }
                         </div>

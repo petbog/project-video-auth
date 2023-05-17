@@ -5,7 +5,7 @@ import classes from './LoginPage.module.css';
 
 
 
-const LoginPage = () => {
+const LoginPage:React.FC = () => {
 
     return (
         <div className={classes.login}>

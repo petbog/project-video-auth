@@ -3,7 +3,7 @@ import SindUp from '../../Component/RegisterAuth/SindUp';
 import classes from './PegisterPage.module.css'
 
 
-const PegisterPage = () => {
+const PegisterPage:React.FC = () => {
     return (
         <div className={classes.login}>
             <div className={classes.login_container}>

@@ -1,12 +1,15 @@
-import {useState } from "react"
+import { useState } from "react"
 import classes from './Form.module.css'
 import eye_off from '../../img/eye_off.svg'
 import eye from '../../img/eye.svg'
 
 
+type FortProps = {
+    title: string,
+    handleClick: (email:string,pass:string ) => void
+}
 
-
-const Form = ({ title, handleClick }) => {
+const Form: React.FC<FortProps> = ({ title, handleClick }) => {
 
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
@@ -27,7 +30,7 @@ const Form = ({ title, handleClick }) => {
         }
     }
 
-    const blurHandle = (e) => {
+    const blurHandle = (e: React.FocusEvent<HTMLInputElement>) => {
         switch (e.target.name) {
             case 'email':
                 setEmailDirty(true)
@@ -38,7 +41,7 @@ const Form = ({ title, handleClick }) => {
         }
     }
 
-    const emailHandler = (e) => {
+    const emailHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value)
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!re.test(String(e.target.value).toLowerCase())) {
@@ -49,7 +52,7 @@ const Form = ({ title, handleClick }) => {
 
     }
 
-    const passwordHandler = (e) => {
+    const passwordHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setPass(e.target.value)
         if (e.target.value.length < 6 || e.target.value.length > 9) {
             setPassError('Пароль должен состоять от 6 до 8 символов')
@@ -91,7 +94,7 @@ const Form = ({ title, handleClick }) => {
                 <img onClick={handleToggle} className={classes.form_img} src={src} alt="" />
             </div>
             <div className={classes.Button_container}>
-                <button  className={classes.Form_button} onClick={() => handleClick(email, pass)}>{title}</button>
+                <button className={classes.Form_button} onClick={() => handleClick(email, pass)}>{title}</button>
             </div>
         </div>
     )

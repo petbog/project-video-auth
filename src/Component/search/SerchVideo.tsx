@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import classes from './SerchVideo.module.css'
 import { useDispatch } from 'react-redux'
 import { getSearchValue } from '../../Redux/slise/SearchSlise'
@@ -8,14 +8,14 @@ import icons_search from '../../img/icons_search.svg'
 
 
 
-const SerchVideo = () => {
+const SerchVideo:React.FC = () => {
     const dispatch = useDispatch()
     const [value, setValue] = useState('')
 
-    const keyRef = useRef()
+    const keyRef = useRef<HTMLInputElement>(null)
 
 
-    const onChangeInput = (e) => {
+    const onChangeInput = (e:React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
     }
 
@@ -29,11 +29,12 @@ const SerchVideo = () => {
     }
 
     useEffect(() => {
+        //@ts-ignore
         document.addEventListener('keydown', setKey)
 
     }, [value])
 
-    const setKey = (e) => {
+    const setKey = (e:React.KeyboardEvent<HTMLButtonElement>) => {
         if (e.key === 'Enter') {
             dispatch(getSearchValue(value))
             setValue('')

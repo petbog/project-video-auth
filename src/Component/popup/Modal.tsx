@@ -1,13 +1,18 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import classes from './Modal.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { setCountVideo, setSortType } from '../../Redux/slise/SearchSlise'
 import simons from '../../img/imagesSimon.png'
-import { debounce } from 'debounce'
+import { debounce } from 'lodash'
 
 
-const Modal = () => {
-    const sortTypeVideo = [
+const Modal:React.FC = () => {
+
+    type sortTypeVideoType={
+        name:string,
+        typeSort:string,
+    }
+     const sortTypeVideo:sortTypeVideoType[] = [
         { name: 'Дата', typeSort: 'date' },
         { name: 'Рейтинг', typeSort: 'rating' },
         { name: 'Актуальность', typeSort: 'relevance' },
@@ -15,27 +20,28 @@ const Modal = () => {
     ]
     const dispatch = useDispatch()
     const { sort, countVideo } = useSelector(state => state.search)
-    const modalRef = useRef(false)
+    //в useReff был false
+    const modalRef = useRef<HTMLDivElement >(null)
     const [searchMenu, SetsearchMenu] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setCountVideo(e.target.value)
         handleChangeDebounse(e.target.value)
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleChangeDebounse = useCallback(
-        debounce((value) => {
+        debounce((value:string) => {
             dispatch(setCountVideo(value));
         }, 100), []
     )
 
-    const activSortVideo = (obj) => {
+    const activSortVideo = (obj:sortTypeVideoType) => {
         dispatch(setSortType(obj))
         SetsearchMenu(false)
     }
     useEffect(() => {
-        const handleClickOutsade = (event) => {
+        const handleClickOutsade = (event:any) => {
             if (modalRef.current && !event.composedPath().includes(modalRef.current)) {
                 SetsearchMenu(false)
             }

@@ -16,6 +16,7 @@ export function useAuth() {
         localStorage.setItem('user', JSON.stringify(User))
     }
     useEffect(() => {
+        // @ts-ignore
         const UserLC = JSON.parse(localStorage.getItem('user'))
         if (!UserLC) {
             dispatch(setUserLC({

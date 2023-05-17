@@ -4,17 +4,18 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { setUser } from "../../Redux/slise/UserSlice";
 
-const Login = () => {
+const Login:React.FC = () => {
     const dispatch = useDispatch()
     const push = useNavigate()
 
-    const handleLogin = (email, password) => {
+    const handleLogin = (email:string, password:string ) => {
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
         .then(({ user }) => {
             dispatch(setUser({
                 email: user.email,
                 id: user.uid,
+                //@ts-ignore
                 token: user.accessToken,
             }))
             push('/')

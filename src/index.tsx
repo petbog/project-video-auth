@@ -8,7 +8,7 @@ import { store } from './Redux';
 import './firebase'
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById('root')!);
 root.render(
     <BrowserRouter>
         <Provider store={store}>
