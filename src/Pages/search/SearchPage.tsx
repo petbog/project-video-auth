@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import  { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
 import SerchVideo from '../../Component/search/SerchVideo';
-import { SearchVideo } from '../../Redux/slise/SearchSlise';
+import { SearchDelector, SearchVideo } from '../../Redux/slise/SearchSlise';
 import Video from '../../Component/video/Video';
 import TitleSearch from '../../Component/TitleSearch/TitleSearch';
 import grid_activ from '../../img/grid_activ.png'
@@ -14,8 +14,9 @@ import list_desibel from '../../img/list_desibel.png'
 import setting from '../../img/setting.svg'
 import MyPreloader from '../../preloader/Preloader'
 import Modal from '../../Component/popup/Modal'
-import { GetViewsCount, setViews } from '../../Redux/slise/ViewsSlise';
+import { GetViewsCount, VieasSelector, setViews } from '../../Redux/slise/ViewsSlise';
 import Header from '../../Component/Header/Header';
+import { UserSelector } from '../../Redux/slise/UserSlice';
 
 
 
@@ -23,7 +24,7 @@ import Header from '../../Component/Header/Header';
 const SearchPage:React.FC = () => {
     const dispatch = useDispatch()
         //@ts-ignore
-    const { item, searchValue, sort, countVideo } = useSelector(state => state.search)
+    const { item, searchValue, sort, countVideo } = useSelector(SearchDelector)
     const sortVideo = sort.typeSort
     const video = item.items
     const navigate = useNavigate()
@@ -33,10 +34,8 @@ const SearchPage:React.FC = () => {
     const [statusGridTrue, setStatusGridTrue] = useState<boolean>(true)
     const [settingMenu, SetSettingMenu] = useState<boolean>(false)
     const imgRef = useRef(null)
-        //@ts-ignore
-    const { items, views } = useSelector(state => state.views)
-        //@ts-ignore
-    const { email } = useSelector(state => state.user)
+    const { items, views } = useSelector(VieasSelector)
+    const { email } = useSelector(UserSelector)
     const fullVideo = views.items
 
 

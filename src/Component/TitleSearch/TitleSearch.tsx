@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux'
 import classes from './TitleSearch.module.css'
+import { SearchDelector } from '../../Redux/slise/SearchSlise'
 
 
 const TitleSearch = () => {
-    const {searchValue}= useSelector(state =>state.search)
+    const {searchValue}= useSelector(SearchDelector)
     return (
         <div className="">
             <div className="">

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setCountVideo, setSortType } from '../../Redux/slise/SearchSlise'
 import simons from '../../img/imagesSimon.png'
 import { debounce } from 'lodash'
+import { UserSelector } from '../../Redux/slise/UserSlice'
 
 
 const Modal:React.FC = () => {
@@ -19,7 +20,7 @@ const Modal:React.FC = () => {
         { name: 'Название', typeSort: 'title' },
     ]
     const dispatch = useDispatch()
-    const { sort, countVideo } = useSelector(state => state.search)
+    const { sort, countVideo } = useSelector(UserSelector)
     //в useReff был false
     const modalRef = useRef<HTMLDivElement >(null)
     const [searchMenu, SetsearchMenu] = useState(false);

@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { RootState } from "..";
 
 // const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
 const api_key = `AIzaSyBQ_CVy1nc8t2YebofCtvFS135p6tolsJM`
@@ -58,6 +59,9 @@ const SearchSlise = createSlice({
         },
     }
 })
+
+export const SearchDelector =(state:RootState)=> state.search
+
 export const { getSearch, getSearchValue, setSortType, setCountVideo } = SearchSlise.actions
 export default SearchSlise.reducer
 

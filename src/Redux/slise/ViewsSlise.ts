@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { RootState } from "..";
 
 
 // const api_key = `AIzaSyBGiRuZ-YJLoo3fiRHxoWpwZKiZpOXDufw`
@@ -15,7 +16,18 @@ export const GetViewsCount = createAsyncThunk(
     }
 )
 
-const initialState = {
+type VievsType={
+    items:string[]
+}
+type ItemsType={
+    items:string[]
+}
+interface initialStateType{
+    views:VievsType[];
+    items:ItemsType[]
+}
+
+const initialState:initialStateType = {
     views: [],
     items: [],
     status: 'loading' || 'success' || 'error',
@@ -44,6 +56,7 @@ const ViewsSlise = createSlice({
     }
 })
 
+export const VieasSelector =(state:RootState)=>state.views
 
 export const { setViews } = ViewsSlise.actions;
 export default ViewsSlise.reducer;
