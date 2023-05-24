@@ -1,5 +1,5 @@
 import { useAuth } from '../../hooks/use-auth'
-import { useDispatch, useSelector } from 'react-redux';
+import {  useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
@@ -17,13 +17,13 @@ import Modal from '../../Component/popup/Modal'
 import { GetViewsCount, VieasSelector, setViews } from '../../Redux/slise/ViewsSlise';
 import Header from '../../Component/Header/Header';
 import { UserSelector } from '../../Redux/slise/UserSlice';
+import { useAppDispatch } from '../../Redux';
 
 
 
 //@ts-ignore
 const SearchPage: React.FC = () => {
-    const dispatch = useDispatch()
-    //@ts-ignore
+    const dispatch = useAppDispatch()
     const { item, searchValue, sort, countVideo } = useSelector(SearchDelector)
     const sortVideo = sort.typeSort
     const video = item.items
@@ -66,7 +66,6 @@ const SearchPage: React.FC = () => {
     }
 
     useEffect(() => {
-        //@ts-ignore
         dispatch(SearchVideo({
             searchValue,
             countVideo,
@@ -86,7 +85,6 @@ const SearchPage: React.FC = () => {
     }, [video, dispatch])
 
     useEffect(() => {
-        //@ts-ignore
         dispatch(GetViewsCount({
             items
         }))

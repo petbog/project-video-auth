@@ -1,11 +1,11 @@
-import { useDispatch } from "react-redux";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Form from '../FormAuth/Form';
 import { setUser } from '../../Redux/slise/UserSlice'
 import { useNavigate } from 'react-router-dom'
+import { useAppDispatch } from "../../Redux";
 
 const SindUp = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const push = useNavigate()
 
     const handleRegister = (email:string, password:string) => {

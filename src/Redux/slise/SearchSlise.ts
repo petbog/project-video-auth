@@ -19,9 +19,13 @@ export const SearchVideo = createAsyncThunk(
     }
 )
 
+// type SortType = {
+//     name: 'Дата' | 'Рейтинг' | 'Актуальность' | 'Название';
+//     typeSort: 'date' | 'rating' | 'relevance' | 'title';
+// }
 type SortType = {
-    name: 'Дата' | 'Рейтинг' | 'Актуальность' | 'Название';
-    typeSort: 'date' | 'rating' | 'relevance' | 'title';
+    name: string;
+    typeSort: string;
 }
 type VideoIdType = {
     videoId: string
@@ -32,10 +36,15 @@ type IdType = {
 type ItemType = {
     items: IdType[]
 }
+enum Status{
+    Loading = 'loading',
+    Succsess = 'success',
+    Error = 'error',
+}
 
 interface InitialStateType {
     item: ItemType[];
-    status: 'loading' | 'success' | 'error',
+    status: Status,
     searchValue: string;
     sort: SortType;
     countVideo: number
@@ -43,7 +52,7 @@ interface InitialStateType {
 
 const initialState: InitialStateType = {
     item: [],
-    status: 'loading' || 'success' || 'error',
+    status: Status.Loading,
     searchValue: 'Котики',
     sort: {
         name: 'Актуальность',
@@ -71,15 +80,15 @@ const SearchSlise = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(SearchVideo.pending, (state) => {
-            state.status = 'loading'
+            state.status = Status.Loading
         })
         builder.addCase(SearchVideo.fulfilled, (state, action) => {
-            state.status = 'success'
+            state.status =Status.Succsess
             state.item = action.payload
 
         })
         builder.addCase(SearchVideo.rejected, (state) => {
-            state.status = 'error'
+            state.status = Status.Error
         })
     }
     // extraReducers: {

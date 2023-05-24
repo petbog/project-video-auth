@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import classes from './Modal.module.css'
-import { useDispatch, useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import { setCountVideo, setSortType } from '../../Redux/slise/SearchSlise'
 import simons from '../../img/imagesSimon.png'
 import { debounce } from 'lodash'
-import { UserSelector } from '../../Redux/slise/UserSlice'
+import { useAppDispatch } from '../../Redux'
+import { SearchDelector } from '../../Redux/slise/SearchSlise'
 
 
 const Modal:React.FC = () => {
@@ -19,21 +20,20 @@ const Modal:React.FC = () => {
         { name: 'Актуальность', typeSort: 'relevance' },
         { name: 'Название', typeSort: 'title' },
     ]
-    const dispatch = useDispatch()
-    const { sort, countVideo } = useSelector(UserSelector)
+    const dispatch = useAppDispatch()
+    const { sort, countVideo } = useSelector(SearchDelector)
     //в useReff был false
     const modalRef = useRef<HTMLDivElement >(null)
     const [searchMenu, SetsearchMenu] = useState(false);
 
     const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        setCountVideo(e.target.value)
+        setCountVideo(Number(e.target.value))
         handleChangeDebounse(e.target.value)
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     const handleChangeDebounse = useCallback(
         debounce((value:string) => {
-            dispatch(setCountVideo(value));
+            dispatch(setCountVideo(Number(value)));
         }, 100), []
     )
 

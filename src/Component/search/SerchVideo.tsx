@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react'
 import classes from './SerchVideo.module.css'
-import { useDispatch } from 'react-redux'
 import { getSearchValue } from '../../Redux/slise/SearchSlise'
 import close from '../../img/close.svg'
 import icons_search from '../../img/icons_search.svg'
+import { useAppDispatch } from '../../Redux'
 
 
 
 
 const SerchVideo:React.FC = () => {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
     const [value, setValue] = useState('')
 
     const keyRef = useRef<HTMLInputElement>(null)

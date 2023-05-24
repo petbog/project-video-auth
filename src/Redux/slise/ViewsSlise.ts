@@ -39,16 +39,23 @@ type VievsType = {
 type ItemsType = {
     items: string[]
 }
+
+export enum Status {
+    Loading = 'loading',
+    Succsess = 'success',
+    Error = 'error',
+}
+
 interface initialStateType {
     views: VievsType[];
     items: ItemsType[];
-    status: 'loading' | 'success' | 'error',
+    status: Status,
 }
 
 const initialState: initialStateType = {
     views: [],
     items: [],
-    status: 'loading' || 'success' || 'error',
+    status: Status.Loading ,
 }
 
 const ViewsSlise = createSlice({
@@ -61,15 +68,15 @@ const ViewsSlise = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(GetViewsCount.pending, (state) => {
-            state.status = 'loading'
+            state.status = Status.Loading
         })
         builder.addCase(GetViewsCount.fulfilled, (state, action) => {
-            state.status = 'success'
+            state.status = Status.Succsess
             state.views = action.payload
 
         })
         builder.addCase(GetViewsCount.rejected, (state) => {
-            state.status = 'error'
+            state.status = Status.Error
         })
 
     }

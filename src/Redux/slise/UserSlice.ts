@@ -3,9 +3,9 @@ import { RootState } from "..";
 
 
 interface initialStateType {
-    email: string;
-    token: string;
-    id: string;
+    email: string | null;
+    token: string | null;
+    id: string | null;
 }
 const initialState: initialStateType = {
     email: '',

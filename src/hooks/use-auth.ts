@@ -1,9 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { UserSelector, setUserLC } from "../Redux/slise/UserSlice";
 import { useEffect } from "react";
+import { useAppDispatch } from "../Redux";
 
 export function useAuth() {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     const { email, token, id } = useSelector(UserSelector)
     const User = {
