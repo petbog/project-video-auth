@@ -1,7 +1,7 @@
 import { useAuth } from '../../hooks/use-auth'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import  { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
 import SerchVideo from '../../Component/search/SerchVideo';
 import { SearchDelector, SearchVideo } from '../../Redux/slise/SearchSlise';
@@ -20,13 +20,14 @@ import { UserSelector } from '../../Redux/slise/UserSlice';
 
 
 
-        //@ts-ignore
-const SearchPage:React.FC = () => {
+//@ts-ignore
+const SearchPage: React.FC = () => {
     const dispatch = useDispatch()
-        //@ts-ignore
+    //@ts-ignore
     const { item, searchValue, sort, countVideo } = useSelector(SearchDelector)
     const sortVideo = sort.typeSort
     const video = item.items
+    console.log(item)
     const navigate = useNavigate()
     const { isAuth } = useAuth()
     const [statusGrid, setStatusGrid] = useState(grid_activ)
@@ -37,7 +38,6 @@ const SearchPage:React.FC = () => {
     const { items, views } = useSelector(VieasSelector)
     const { email } = useSelector(UserSelector)
     const fullVideo = views.items
-
 
 
     useEffect(() => {
@@ -66,7 +66,7 @@ const SearchPage:React.FC = () => {
     }
 
     useEffect(() => {
-            //@ts-ignore
+        //@ts-ignore
         dispatch(SearchVideo({
             searchValue,
             countVideo,
@@ -77,7 +77,7 @@ const SearchPage:React.FC = () => {
 
     useEffect(() => {
         if (video) {
-            const idVideo = video.reduce((acc:any, item:any) => {
+            const idVideo = video.reduce((acc: any, item: any) => {
                 acc.push(item.id.videoId)
                 return acc
             }, [])
@@ -118,7 +118,7 @@ const SearchPage:React.FC = () => {
                         </div>
                         <div className={`${statusGrid === grid_activ ? classes.grid : classes.flex}`}>
                             {
-                                fullVideo ? fullVideo.map((item:string, i: number) =>
+                                fullVideo ? fullVideo.map((item: string, i: number) =>
                                     <Video item={item} key={i} statusGridTrue={statusGridTrue} index={0} />
                                 ) : skeleton
                             }
