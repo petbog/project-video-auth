@@ -34,7 +34,7 @@ type IdType = {
     id: VideoIdType
 }
 type ItemType = {
-    items: IdType[]
+    items: IdType
 }
 enum Status{
     Loading = 'loading',
@@ -43,7 +43,7 @@ enum Status{
 }
 
 interface InitialStateType {
-    item: ItemType[];
+    item:  ItemType[]  ;
     status: Status,
     searchValue: string;
     sort: SortType;

@@ -1,5 +1,5 @@
 import { useAuth } from '../../hooks/use-auth'
-import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useRef, useState } from 'react';
 import classes from './SearchPage.module.css'
@@ -26,8 +26,8 @@ const SearchPage: React.FC = () => {
     const dispatch = useAppDispatch()
     const { item, searchValue, sort, countVideo } = useSelector(SearchDelector)
     const sortVideo = sort.typeSort
+    //@ts-ignore
     const video = item.items
-    console.log(item)
     const navigate = useNavigate()
     const { isAuth } = useAuth()
     const [statusGrid, setStatusGrid] = useState(grid_activ)
@@ -37,6 +37,7 @@ const SearchPage: React.FC = () => {
     const imgRef = useRef(null)
     const { items, views } = useSelector(VieasSelector)
     const { email } = useSelector(UserSelector)
+    //@ts-ignore
     const fullVideo = views.items
 
 
@@ -85,9 +86,8 @@ const SearchPage: React.FC = () => {
     }, [video, dispatch])
 
     useEffect(() => {
-        dispatch(GetViewsCount({
-            items
-        }))
+        //@ts-ignore
+        dispatch(GetViewsCount({items}))
     }, [items, dispatch])
 
 

@@ -87,10 +87,6 @@ const Modal:React.FC = () => {
                         <p className={classes.slider_value} >{countVideo}</p>
                     </div>
                 </div>
-
-                {/* <div className={classes.button_container}>
-                    <button className={classes.button_save}>Сохранить</button>
-                </div> */}
             </div>
         </div>
     )
